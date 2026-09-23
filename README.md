@@ -46,25 +46,43 @@ int caster(d1, d2)
 ```
 
 ### 6) How are strings declared and initialized in C? What is the role of the null terminator ‘\0’?
-
+```
+char string_name[] = "String text";
+```
+The null terminator is placed at the end of the string to terminate it.
 
 ### 7) What is a pointer in C? How do you pass a pointer to a function? What advantages are there to passing a pointer instead of a value?
-
+A pointer is a variable that contains another address as its value. If we pass a pointer instead of a value we can modify variables that are outside of the function by modifying the value at the pointer address.
 
 ### 8) What does the * operator and the & operator do in the context of pointers?
-
+The \* operator is used to retrieve the value at the address it is placed in front of: `"*address" gives "value at address"`    
+The \& operator is used to retrieve the address of a variable: `"&variable" gives "address of variable"
 
 ### 9) What is the difference between while and do…while loops?
-
+A while loop will check if the condition is met before the loop is run, the do...while loop runs the loop and then checks the condition before running the loop again.
 
 ### 10) What does the break statement do? How is it different from the continue statement?
-
+The break statement exits a loop, with the continue statement skips past the current loop and starts the next iteration.
 
 ### 11) Explain the use of bitwise operators (i.e. &, |, ^, ~, <<, >>) in C. Which bitwise operators can be used to set, clear, toggle, or check a specific bit in an integer variable?
-
+Bitwise operators are used to modify individual bits, most commonly through bit masks.
+`bits & mask` will clear all bits where the mask is 0    
+`bits | mask` will set all bits where the mask is 1    
+`bits ^ mask` will toggle all bits where the mask is 1    
+`~bits` will toggle all bits    
+`bits << n` will shift all bits to the left by n places    
+`bits >> n` will shift all bits to the right by n places
+To check a specific bit: `bit & mask` with mask being all 0 except for 1 bit will allow us to check if the result is 0. If it is not than the one bit in the mask that was set to 1 corresponds to a 1 in the bits.
 
 ### 12) What is the purpose of the PxSEL0 and PxSEL1 GPIO registers? Write two statements that select the GPIO function for the pins P1.0 and P1.7.
+PxSEL0 and PxSEL1 allow us to chose between 4 settings for each port. The combination of their values serves as a binary number between 0 and 3 the selects between the pin being (i/o), UCA0STE , and DCSS.
+```
+P1->SEL0 &= ~0xFF;
+P1->SEL1 &= ~0xFF;
+```
 
+> [!WARNING]
+> The options for what the pin will be based on PxSEL0 and PxSEL1 are different for each pin and are found in a table that must be referenced on page 139 of the datasheet.
 
 ### 13) Write a void function named P1_1_and_P1_4_Init that configures P1.1 and P1.4 as GPIO inputs with pull-up resistors enabled.
 

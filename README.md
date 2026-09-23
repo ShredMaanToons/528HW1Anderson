@@ -56,7 +56,7 @@ A pointer is a variable that contains another address as its value. If we pass a
 
 ### 8) What does the * operator and the & operator do in the context of pointers?
 The \* operator is used to retrieve the value at the address it is placed in front of: `"*address" gives "value at address"`    
-The \& operator is used to retrieve the address of a variable: `"&variable" gives "address of variable"
+The \& operator is used to retrieve the address of a variable: `"&variable" gives "address of variable"`
 
 ### 9) What is the difference between while and do…while loops?
 A while loop will check if the condition is met before the loop is run, the do...while loop runs the loop and then checks the condition before running the loop again.

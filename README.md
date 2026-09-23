@@ -2,22 +2,48 @@
 
 ## Section 1: Review Questions
 ### 1) a) What is the difference between a compiler and an interpreter?
-
+A compiler converts human readable code into machine code without running it, the interpreter on the other hand runs the human readable code line by line without create the machine code version seperately.
 
 ### 1) b) What is the output of a C program’s main() function by default?
-
+integer
+> [!TIP]
+> **int** main(void)
 
 ### 2) What are header files in C and what is the purpose of the #include directive?
-
+Header files declare each function and contain documentation for the function. The #include directive tells the program what files besides the source code need to be accessed to run the code.
 
 ### 3) Explain how to declare and define a function in C. What is the purpose of the return statement in a function? Can a function have more than one return statement?
-
+To declare and define a function we must follow this format: `Return Type` `space` `Function Name` (`function parameter *type* **name**`,`function parameter *type* **name**`,...); <- This should be written in the header.    
+`Return Type` `space` `Function Name` (`function parameter **name**`,`function parameter **name**`,...) <- This should be written in the source code, followed by the function code inside {}    
+The return statement in a function tells the function what it should set as its value and tells the function to stop running.    
+A function can have more than one return, but due to the return statement telling the function to stop running only one return be active in each branching path.
 
 ### 4) What is type casting? Provide an example C function that demonstrates explicit type casting from double to int. The function should accept two arguments that are both double and return their sum as an integer.
-
+Type casting is the conversion of one data type to another data type.    
+```
+int caster(d1,d2)
+{
+    dSum = d1 + d2;
+    iSum = (int)dSum;
+    return iSum;
+}
+```
 
 ### 5) Explain the difference between local and global variables. Provide an example of each.
+A local variable is a variable that is declared within a function and only exists within the function, being removed when the function ends. A global variable is declared outside of the functions and exists throughout the entire file.    
+> **Examples**
+```
+double double1 = 1.5; // <- Global variable
+double double2 = 2.4; // <- Global variable
+int casted = caster(double1, double2); // <- Function called with global variables
 
+int caster(d1, d2)
+{
+    dSum = d1 + d2; // <- Local variable = local variable + local variable
+    iSum = (int)dSum; // <- Local variables
+    return iSum; // <- Local variable
+}
+```
 
 ### 6) How are strings declared and initialized in C? What is the role of the null terminator ‘\0’?
 

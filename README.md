@@ -14,7 +14,7 @@ Header files declare each function and contain documentation for the function. T
 
 ### 3) Explain how to declare and define a function in C. What is the purpose of the return statement in a function? Can a function have more than one return statement?
 To declare and define a function we must follow this format: `Return Type` `space` `Function Name` (`function parameter *type* **name**`,`function parameter *type* **name**`,...); <- This should be written in the header.    
-`Return Type` `space` `Function Name` (`function parameter **name**`,`function parameter **name**`,...) <- This should be written in the source code, followed by the function code inside {}    
+`Return Type` `space` `Function Name` (`function parameter *type* **name**`,`function parameter *type* **name**`,...) <- This should be written in the source code, followed by the function code inside {}    
 The return statement in a function tells the function what it should set as its value and tells the function to stop running.    
 A function can have more than one return, but due to the return statement telling the function to stop running only one return be active in each branching path.
 

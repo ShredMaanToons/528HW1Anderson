@@ -16,7 +16,7 @@ void classifier()
     int num = 0;
     int abval = 0;
     printf("Input an integer: ");
-    scanf("%d", &number);
+    scanf("%d", &num);
     if(num > 0){
         printf("%d is a positive number ", num);
         abval = num;

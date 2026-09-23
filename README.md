@@ -51,6 +51,7 @@
 #### P7.0 to P7.7
 
 ## Section 2: Programming assignments
+---
 ### Integer Size and Magnitude
 #### Write a C program that reports whether a number is positive, negative, or zero, and prints its absolute value.
 
@@ -63,6 +64,7 @@
 #### Name your source file as sign_and_magnitude.c and write at least five test cases to verify the functionality of your program. Provide a screenshot of your program’s output in your GitHub repository that shows all test cases.
 
 
+---
 ### Bit Counter
 #### Write a C program that counts how many bits are set to 1 in an unsigned 32-bit integer.
 
@@ -74,6 +76,7 @@
 #### Name your source file as bit_counter.c and write at least five test cases to verify the functionality of your program. Provide a screenshot of your program’s output in your GitHub repository that shows all test cases. Example screenshots are shown below.
 
 
+---
 ### Fibonacci
 #### Write a C program that computes the Nth Fibonacci sequence using an iterative approach for n > 1.
 

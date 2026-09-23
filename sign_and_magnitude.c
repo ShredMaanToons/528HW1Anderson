@@ -1,4 +1,5 @@
-#include <stdio.h>
+void classifier();
+void classifier_test(int num);
 
 int main(void)
 {
@@ -12,8 +13,10 @@ int main(void)
 
 void classifier()
 {
+    int num = 0;
     int abval = 0;
-    scanf("Input and integer: ", num);
+    printf("Input an integer: ");
+    scanf("%d", &number);
     if(num > 0){
         printf("%d is a positive number ", num);
         abval = num;
@@ -25,13 +28,12 @@ void classifier()
     else{
         printf("%d is zero ", num);
     }
-    printf("with absolute value: %d", abval);
+    printf("with absolute value: %d\n", abval);
 }
 
 void classifier_test(int num)
 {
     int abval = 0;
-    scanf("Input and integer: ", num);
     if(num > 0){
         printf("%d is a positive number ", num);
         abval = num;
@@ -43,5 +45,5 @@ void classifier_test(int num)
     else{
         printf("%d is zero ", num);
     }
-    printf("with absolute value: %d", abval);
+    printf("with absolute value: %d\n", abval);
 }

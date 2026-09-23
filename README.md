@@ -85,14 +85,47 @@ P1->SEL1 &= ~0xFF;
 > The options for what the pin will be based on PxSEL0 and PxSEL1 are different for each pin and are found in a table that must be referenced on page 139 of the datasheet.
 
 ### 13) Write a void function named P1_1_and_P1_4_Init that configures P1.1 and P1.4 as GPIO inputs with pull-up resistors enabled.
-
+```
+void P1_1_and_P1_4_Init(void)
+{
+    P1->SEL0 &= ~0x1E;
+    P1->SEL1 &= ~0x1E;
+    P1->DIR &= ~0x1E;
+    P1->REN |= 0x1E;
+    P1->OUT |= 0x1E;
+}
+```
 
 ### 14) Write a void function named Buttons_Init that configures the following pins as GPIO inputs with pull-down resistors enabled:
 #### P3.1, P3.6, P5.0, P5.4
+```
+void Buttons_Init(void)
+{
+    P3->SEL0 &= ~0x42;
+    P3->SEL1 &= ~0x42;
+    P3->DIR &= ~0x42;
+    P3->REN |= 0x42;
+    P3->OUT &= ~0x42;
 
+    P5->SEL0 &= ~0x11;
+    P5->SEL1 &= ~0x11;
+    P5->DIR &= ~0x11;
+    P5->REN |= 0x11;
+    P5->OUT &= ~0x11;
+}
+```
 
 ### 15) Write a void function named LEDs_Init that configures the following pins as GPIO outputs. Initialize the pins to zero.
 #### P7.0 to P7.7
+```
+void LEDs_Init(void)
+{
+    P7->SEL0 &= ~0xFF;
+    P7->SEL1 &= ~0xFF;
+    P7->DIR |= 0xFF;
+    P7->OUT &= ~0xFF;
+}
+```
 
 ## Section 2: Programming assignments
 ---

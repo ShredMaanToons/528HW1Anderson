@@ -5,6 +5,7 @@ void classifier_test(int num);
 
 int main(void)
 {
+    char c;
     int flag = 1;
     classifier_test(-1);
     classifier_test(0);
@@ -16,6 +17,7 @@ int main(void)
         classifier();
         printf("Enter 1 to run again, enter 0 to exit: ");
         scanf("%d", &flag);
+        while ((c = getchar()) != '\n' && c != EOF);
     }
 }
 

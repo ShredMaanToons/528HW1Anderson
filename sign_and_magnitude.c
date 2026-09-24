@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 void classifier();
 void classifier_test(int num);
 

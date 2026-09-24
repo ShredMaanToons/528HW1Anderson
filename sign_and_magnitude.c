@@ -5,12 +5,18 @@ void classifier_test(int num);
 
 int main(void)
 {
+    int flag = 1;
     classifier_test(-1);
     classifier_test(0);
     classifier_test(1);
     classifier_test(-234234);
     classifier_test(777);
-    classifier();
+    while(flag)
+    {
+        classifier();
+        printf("Enter 1 to run again, enter 0 to exit: ");
+        scanf("%d", &flag);
+    }
 }
 
 void classifier()

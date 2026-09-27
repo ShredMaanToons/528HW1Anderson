@@ -7,10 +7,15 @@ int main(void)
 {
     char c;
     int flag = 1;
+    printf("Testing -1:\n");
     classifier_test(-1);
+    printf("Testing 0:\n");
     classifier_test(0);
+    printf("Testing 1:\n");
     classifier_test(1);
+    printf("Testing -234234:\n");
     classifier_test(-234234);
+    printf("Testing 777:\n");
     classifier_test(777);
     while(flag)
     {

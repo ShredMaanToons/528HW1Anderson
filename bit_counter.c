@@ -7,18 +7,31 @@ int parse_uint32(const char *s, uint32_t *out);
 
 int main(void)
 {
+    char c;
+    int flag = 1;
     uint32_t t1 = 0x00000000; // 0
     uint32_t t2 = 0x00000001; // 1
     uint32_t t3 = 0x00000010; // 1
     uint32_t t4 = 0x11111111; // 8
     uint32_t t5 = 0xA0F0F0F5; // 16
+    printf("Testing %X:\n", t1);
     bCount_test(t1);
+    printf("Testing %X:\n", t2);
     bCount_test(t2);
+    printf("Testing %X:\n", t3);
     bCount_test(t3);
+    printf("Testing %X:\n", t4);
     bCount_test(t4);
+    printf("Testing %X:\n", t5);
     bCount_test(t5);
-    bCount();
-
+    while(flag)
+    {
+        bCount();
+        printf("Enter 1 to run again, enter 0 to exit: ");
+        scanf("%d", &flag);
+        while ((c = getchar()) != '\n' && c != EOF);
+    }
+    return 1;
 }
 
 void bCount()
@@ -31,7 +44,7 @@ void bCount()
     // fgets waits for user input and puts it in the variable buf, max size (sizeof buf), from the...
     //... standard input file stream.
     if (!(fgets(buf, sizeof buf, stdin)) || !(parse_uint32(buf, &num))) { // parse_uint32 is a user defined function
-        printf("Invalid uint32_t"); // If either function failed we print that the uint32_t was invalid
+        printf("Invalid uint32_t\n"); // If either function failed we print that the uint32_t was invalid
         return; // And exit the function
     }
 
